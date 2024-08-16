@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #result-container {
+            display: none;
+            animation: fadeIn 1s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .score-display {
+            font-size: 24px;
+            color: #61dafb;
+            margin-bottom: 20px;
+            animation: pop 0.5s ease-out forwards;
+        }
+        @keyframes pop {
+            0% { transform: scale(0.5); opacity: 0.5; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        #score button{
+            background-color: rgba(0, 0, 0, 0.2);
+            color: #61dafb;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Quiz Time!</h1>
+        <div id="quiz">
+            <div class="quiz-question">
+                <h2 id="question">What is the capital of France?</h2>
+            </div>
+            <div id="time">Time left: 10s</div>
+            <ul class="quiz-options">
+                <li>
+                    <label>
+                        <input type="radio" name="answer" class="answer" id="a" value="0">
+                        <span id="option_1">Berlin</span>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="answer" class="answer" id="b" value="1">
+                        <span id="option_2">Madrid</span>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="answer" class="answer" id="c" value="2">
+                        <span id="option_3">Paris</span>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="answer" class="answer" id="d" value="3">
+                        <span id="option_4">Lisbon</span>
+                    </label>
+                </li>
+            </ul>
+            <button id="submit" onclick='check()'>Submit Answer</button>
+        </div>
+        <div id="result-container">
+            <div class="score-display" id="score"></div>
+            <button onclick="location.reload()">Reload Quiz</button>
+            <a href="index.html"><button>Back to Home</button>
+            </div></a>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
